@@ -8,15 +8,19 @@ class HelloGrid extends React.Component{
 
     render(){
         let items = [{
+                id: 1,
+                title: "XYZ"
+            },
+            {   
+                id: 2,
                 title: "XYZ"
             },
             {
+                id: 3,
                 title: "XYZ"
             },
             {
-                title: "XYZ"
-            },
-            {
+                id: 4,
                 title: "XYZ"
             }];
         let itemsPerRow = 2;
@@ -37,11 +41,11 @@ class HelloGrid extends React.Component{
                 <h2>Working on it</h2>
                 <Grid>
                     {
-                    rows.map(r => (
-                        <Row>
+                    rows.map((r, rowIndex) => (
+                        <Row key={rowIndex}>
                             {
                             r.map(c => (
-                                <Col md={colSpan}>
+                                <Col md={colSpan} key={c.id}>
                                     <h3>{c.title}</h3>
                                 </Col>
                             ))
